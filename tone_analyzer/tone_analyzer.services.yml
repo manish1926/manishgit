@@ -1,0 +1,54 @@
+parameters:
+  _locale: 'en'
+  _url: 'http://'
+  _config:
+      url_var_name: 'site'
+      max_file_size: 0
+      allow_hotlinking: 0
+      nonreferer_hotlink: 1
+      upon_hotlink: 1
+      compress_output: 1
+  _frozen_options:
+      include_form: 0
+      remove_images: 0
+      remove_title: 0
+      remove_scripts: 0
+      remove_meta: 0
+      remove_referers: 0
+      accept_cookies: 0
+  _options:
+      include_form: 0
+      remove_images: 0
+      remove_title: 1
+      remove_scripts: 0
+      remove_meta: 0
+      remove_referers: 0
+      accept_cookies: 0
+  _proxify:
+      - 'text/html'
+      - 'text/xml'
+      - 'application/xml+xhtml'
+      - 'application/xhtml+xml'
+      - 'application/rss+xml'
+      - 'application/atom+xml'
+      - 'application/feed+xml'
+      - 'text/css'
+
+services:
+  logger.channel.tone_analyzer:
+    parent: logger.channel_base
+    arguments: ['tone_analyzer']
+
+  tone_analyzer.tone:
+    class: Drupal\tone_analyzer\ToneAnalyzerService
+    arguments: ['@http_client', '@config.factory', '%_config%']
+
+  tone_analyzer.user:
+    class: Drupal\tone_analyzer\ToneAnalyzerUserService
+    arguments: ['@database', '@current_user', '@messenger']
+
+  tone_analyzer.save.browse.url:
+    class: Drupal\tone_analyzer\EventSubscriber\SaveBrowseUrlSubscriber
+    arguments: ['@tone_analyzer.user']
+    tags:
+      - { name: event_subscriber }

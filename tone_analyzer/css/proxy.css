@@ -1,0 +1,170 @@
+.hovered-element {
+  position: relative;
+  background: rgba(176,234,252,0.5);
+}
+
+.hovered-element.no-tone {
+  position: relative;
+  background: none;
+}
+
+.hovered-element.text-selected {
+  border: 2px dashed red;
+}
+
+.ToolTip_wrapper {
+  background: #222;
+  border-radius: 4px 4px 4px 4px;
+  -webkit-border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px 4px 4px 4px;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: normal;
+  padding: 10px;
+  position: absolute;
+  top: calc(100% + 10px);
+  z-index: 999;
+  font-family: Arial, "MS Trebuchet", sans-serif;
+  min-width: 105px;
+  display: none;
+}
+
+.ToolTip_wrapper .ToolTip_arrow {
+  display: block;
+  width: 0;
+  height: 0;
+  border: solid 5px;
+  border-color: transparent transparent #222 transparent;
+  position: absolute;
+  top: -10px;
+  left: 10px
+}
+
+.hovered-element:hover .ToolTip_wrapper {
+  display: inline;
+}
+
+.ToolTip_text label.score {
+  display: none;
+  color: #FFF;
+  margin-right: 10px;
+}
+
+.joy {
+  color: #f7c800 !important;
+}
+
+.tentative {
+  color: #fc5419 !important;
+}
+
+.confident {
+  color: #39ff14 !important;
+}
+
+.analytical {
+  color: rgb(56, 226, 248) !important;
+}
+
+.ToolTip_text {
+  display: block;
+  font-size: 14px;
+}
+
+.ToolTip_text > span {
+  white-space: nowrap;
+  display: block;
+}
+
+.ToolTip_text label {
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 5px;
+}
+
+.ToolTip_text > span:last-child label {
+  margin-bottom: 0;
+}
+
+/*.cancel-icon {
+	padding: 9px 8px;
+    line-height: 0;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    vertical-align: middle;
+	background-image: url("../images/no-tone.png");
+	background-repeat: no-repeat;
+}
+*/
+.info-icon {
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url("../images/emoji_sprite.png");
+  width: 25px;
+  height: 25px;
+  text-indent: -9999px;
+  margin: 0 5px 5px 0;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: 24px 175px;
+  border-radius: 50%;
+}
+
+.info-anger {
+  background-position: 0 0;
+}
+
+.info-fear {
+  background-position: 0 -25px;
+}
+
+.info-sadness {
+  background-position: 0 -75px;
+}
+
+.info-joy {
+  background-position: 0 -50px;
+}
+
+.info-confident {
+  background-position: 0 -125px;
+}
+
+.info-analytical {
+  background-position: 0 -100px;
+}
+
+.info-tentative {
+  background-position: 0 -150px;
+}
+
+/* info icon css 
+.info-icon {
+	padding: 9px 8px;
+    line-height: 0;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    vertical-align: middle;
+	background-image: url("../images/info_sprite.png");
+	background-repeat: no-repeat;
+	background-size: 16px 120px;
+}
+.info-tentative {
+	background-position: 0 -103px;
+}
+.info-analytical {
+	background-position: 0 -69px;
+}
+.info-joy {
+	background-position: 0 -34px;
+}
+.info-confident {
+	background-position: 0 -86px;
+}
+.info-sadness {
+	background-position: 0 -51px;
+}
+*/

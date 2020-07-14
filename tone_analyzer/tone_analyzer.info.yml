@@ -1,0 +1,5 @@
+name: 'tone_analyzer'
+type: module
+description: 'Tone Analyzer integration'
+core: 8.x
+package: 'Tone Analyzer'

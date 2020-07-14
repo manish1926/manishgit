@@ -1,0 +1,108 @@
+<?php
+
+/**
+ * @file
+ * Contains tone_analyzer.module.
+ */
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_help().
+ */
+function tone_analyzer_help($route_name, RouteMatchInterface $route_match)
+{
+  switch ($route_name) {
+    // Main module help for the tone_analyzer module.
+    case 'help.page.tone_analyzer':
+      $output = '';
+      $output .= '<h3>'.t('About').'</h3>';
+      $output .= '<p>'.t('Tone Analyzer integration').'</p>';
+
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function tone_analyzer_theme()
+{
+  return [
+    'page__tone_analyzer'      => [
+      'template' => 'page--tone_analyzer',
+    ],
+    'tone_analyzer'            => [
+      'render element' => 'children',
+    ],
+    'get_tone_content_display' => [
+      'variables' => [
+        'tones'       => null,
+        'search_url'  => null,
+        'module_path' => null,
+      ],
+      'template'  => 'tone-content',
+    ],
+  ];
+}
+
+function tone_analyzer_preprocess_page(&$variables)
+{
+  $current_route = \Drupal::routeMatch();
+  $route_name    = $current_route->getRouteName();
+  if ($route_name == 'tone_analyzer.tone_analyzer_controller_tone') {
+    //unset($variables['page']['sidebar_first']);
+  }
+
+}
+
+/**
+ * @param                                      $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param                                      $form_id
+ */
+function tone_analyzer_form_alter(
+  &$form,
+  FormStateInterface $form_state,
+  $form_id
+) {
+  //print_r($form_id);
+  switch ($form_id) {
+    // Alter login form and add own custom submit handler.
+    case 'user_login_form':
+      $form['name']['#description'] = t('');
+      $form['pass']['#description'] = t('');
+      $form['#submit'][]            = 'tone_analyzer_user_login_form_submit';
+      break;
+
+    case 'user_register_form':
+      $form['account']['name']['#description'] = t('');
+      $form['account']['mail']['#description'] = t('');
+      $form['account']['pass']['#description'] = t('');
+      break;
+
+    case 'contact_message_feedback_form':
+      $form['name']['#title_display']             = 'invisible';
+      $form['name']['#attributes']['placeholder'] = t('Name');
+      $form['mail']['#title_display']             = 'invisible';
+      $form['mail']['#attributes']['placeholder'] = t('Email');
+      $form['subject']['widget'][0]['value']['#title_display']             = 'invisible';
+      $form['subject']['widget'][0]['value']['#attributes']['placeholder'] = t(
+        'Subject'
+      );
+      $form['message']['widget'][0]['value']['#title_display']             = 'invisible';
+      $form['message']['widget'][0]['value']['#attributes']['placeholder'] = t(
+        'Message'
+      );
+      break;
+  }
+}
+
+function tone_analyzer_user_login_form_submit($form, FormStateInterface $form_state)
+{
+  // Set redirect to login form.
+  $form_state->setRedirect('<front>');
+}
+

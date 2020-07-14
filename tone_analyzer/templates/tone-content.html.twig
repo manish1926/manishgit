@@ -1,0 +1,54 @@
+{{ attach_library('tone_analyzer/tone-analyzer') }}
+<div class="ta-sideBar">
+  <div class="to-resp">
+    <div class="hold-logo">
+	  <a href="{{ url('<front>') }}">
+        <img src="{{ module_path }}/images/logoTA.png" alt="tone analyzer logo"/>
+	  </a>
+    </div>
+    <div class="hold-search">
+      <div class="ta-searchWrap">
+        <input id="tone-input" type="text"
+               value="{{ search_url }}" placeholder="Search"/>
+        <button id="tone-input-submit" type="submit"><img
+            src="{{ module_path }}/images/magn.png"
+            alt="tone analyzer logo"/></button>
+      </div>
+    </div>
+  </div>
+  <!--<button class="mob-tab-toggle">Statistics</button>-->
+  <div class="hold-tones">
+    <div class="ta-tabs">
+      <ul id="tab-nav" class="ta-tab-nav">
+        <li><a href="#tabs-1" tab="#tabs-1" class="active ta-summery"><i class="fa fa-file-text-o" aria-hidden="true"></i></a></li>
+        <li><a href="#tabs-2" tab="#tabs-2" class="ta-detail"></a></li>
+      </ul>
+      <div id="tabs-1" class="ta-tab-blocks">
+        <div class="tab-head"><label>Summary</label>
+          <div class="tab-details"><p>We have detected the following tones</p>
+          </div>
+        </div>
+        <ul class="ta-colors">
+          {% for f in tones %}
+          <li class="{{ f | lower }}-wrap"><span
+              class="tone_count">0</span><span
+              class="{{ f }}">{{ f }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+        <div class="tab-head">
+          <div class="tab-details"><p></br>Click on tones to get details.</p>
+          </div>
+        </div>
+      </div>
+      <div id="tabs-2" class="ta-tab-blocks">
+        <div class="tab-head"><label>Details</label>
+          <div class="tab-details"><p>We have detected the following tones</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<iframe id="tone-iframe" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+        src="{{ url('tone_analyzer.tone_analyzer_controller_get_tone', {}, { 'query' : {'site' : search_url} }) }}"></iframe>

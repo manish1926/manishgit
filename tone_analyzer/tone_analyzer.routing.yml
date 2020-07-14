@@ -1,0 +1,50 @@
+
+tone_analyzer.tone_analyzer_config_form:
+  path: '/admin/config/tone_analyzer/toneanalyzerconfig'
+  defaults:
+    _form: '\Drupal\tone_analyzer\Form\ToneAnalyzerConfigForm'
+    _title: 'Tone Analyzer Config Form'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: 'TRUE'
+
+tone_analyzer.tone_analyzer_form:
+  path: '/tone_analyzer/form/tone_analyzer'
+  defaults:
+    _form: '\Drupal\tone_analyzer\Form\ToneAnalyzerForm'
+    _title: 'Tone Analyzer Form'
+  requirements:
+    _access: 'TRUE'
+
+tone_analyzer.tone_analyzer_controller_tone:
+  path: '/tone_analyzer/get_tone'
+  defaults:
+    _controller: '\Drupal\tone_analyzer\Controller\ToneAnalyzerController::getTone'
+    _title: 'getTone'
+  requirements:
+     _user_is_logged_in: 'TRUE'
+
+tone_analyzer.tone_analyzer_controller_get_tone:
+  path: '/tone_analyzer/fetch_tone'
+  defaults:
+    _controller: '\Drupal\tone_analyzer\Controller\ToneAnalyzerController::fetchTone'
+    _title: '[]'
+  requirements:
+    _user_is_logged_in: 'TRUE'
+
+tone_analyzer.register_domain:
+  path: '/user/{user}/register_domain'
+  defaults:
+    _controller: '\Drupal\tone_analyzer\Controller\ToneAnalyzerController::getRegisterDomain'
+    _title: 'Register Domain'
+  requirements:
+    _user_is_logged_in: 'TRUE'
+
+tone_analyzer.browse_history:
+  path: '/user/{user}/browse_history'
+  defaults:
+    _controller: '\Drupal\tone_analyzer\Controller\ToneAnalyzerController::getBrowseHistory'
+    _title: 'Browse History'
+  requirements:
+    _user_is_logged_in: 'TRUE'

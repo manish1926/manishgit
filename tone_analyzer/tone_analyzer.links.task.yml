@@ -1,0 +1,9 @@
+tone_analyzer.register_domain:
+  title: My register domain
+  route_name: tone_analyzer.register_domain
+  base_route: entity.user.canonical
+
+tone_analyzer.browse_history:
+  title: My Browse history
+  route_name: tone_analyzer.browse_history
+  base_route: entity.user.canonical

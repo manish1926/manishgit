@@ -1,0 +1,91 @@
+<?php
+
+function tone_analyzer_install()
+{
+
+}
+
+
+function tone_analyzer_schema()
+{
+  $schema['tone_analyzer_user_domain_mapping'] = [
+    'description' => 'Stores user id and their domain relation.',
+    'fields'      => [
+      'id'        => [
+        'description' => 'Primary ID',
+        'type'        => 'serial',
+        'unsigned'    => true,
+        'not null'    => true,
+      ],
+      'uid'       => [
+        'description' => 'User ID',
+        'type'        => 'int',
+        'unsigned'    => true,
+        'not null'    => true,
+      ],
+      'domain'    => [
+        'description' => 'This column simply holds alpha values',
+        'type'        => 'varchar',
+        'length'      => 255,
+        'not null'    => true,
+      ],
+      'is_bypass' => [
+        'description' => 'This column simply holds random values',
+        'type'        => 'int',
+        'size'        => 'tiny',
+        'not null'    => true,
+        'defult'      => 0,
+      ],
+    ],
+    'primary key' => ['id'],
+    'unique keys' => [
+      'uid' => [
+        'uid',
+      ],
+    ],
+  ];
+
+  $schema['tone_analyzer_search_tone_history'] = [
+    'description' => 'Stores user id and their search URL.',
+    'fields'      => [
+      'id'          => [
+        'description' => 'Primary ID',
+        'type'        => 'serial',
+        'unsigned'    => true,
+        'not null'    => true,
+      ],
+      'uid'         => [
+        'description' => 'User ID',
+        'type'        => 'int',
+        'unsigned'    => true,
+        'not null'    => true,
+      ],
+      'search_url'  => [
+        'description' => 'Search URL',
+        'type'        => 'text',
+        'not null'    => true,
+      ],
+      'search_date' => [
+        'description' => 'Search Date',
+        'type'        => 'varchar',
+        'mysql_type'  => 'timestamp',
+        'not null'    => true,
+        'mysql_default' => 'CURRENT_TIMESTAMP',
+      ],
+    ],
+    'primary key' => ['id'],
+    'indexes'     => [
+      'id'  => ['id'],
+      'uid' => ['uid'],
+    ],
+  ];
+
+  return $schema;
+}
+
+function tablesort_example_uninstall()
+{
+  $db_connection = \Drupal::database();
+  $db_connection->schema()->dropTable('tone_analyzer_user_domain_mapping');
+  $db_connection->schema()->dropTable('tone_analyzer_search_tone_history');
+}

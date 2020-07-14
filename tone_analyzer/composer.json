@@ -1,0 +1,13 @@
+{
+    "name": "tone_analyzer",
+    "type": "drupal-module",
+    "description": "Tone Analyzer integration",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/tone_analyzer",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/tone_analyzer",
+        "source": "http://cgit.drupalcode.org/tone_analyzer",
+    },
+}

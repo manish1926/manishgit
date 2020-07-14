@@ -1,0 +1,372 @@
+.no-sidebars.page-get-tone #content,
+.no-sidebars.page-get-tone #main {
+  width: 100%;
+  margin-top: 0;
+}
+
+.page-get-tone .region-content .content {
+  margin-top: 0;
+}
+
+.page-get-tone .region-content .content:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.no-sidebars.page-get-tone #content > .section {
+  padding: 0;
+}
+
+iframe {
+  width: 100%;
+  height: 500px;
+}
+
+.page-get-tone #main {
+  margin-bottom: 0;
+}
+
+.page-get-tone #main:after {
+  content: "";
+}
+
+.path-tone-analyzer #main iframe {
+  float: left;
+  width: 83%;
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+/* side bar css */
+.ta-sideBar {
+  width: 17%;
+  float: left;
+  padding: 20px 10px 0;
+  box-sizing: border-box;
+  height: 100vh;
+  background: #f6f6f6;
+}
+
+.hold-logo {
+  text-align: center;
+}
+
+.hold-logo img {
+  max-width: 100%;
+  height: 45px;
+}
+
+.hold-search {
+  margin: 30px 0;
+}
+
+.ta-searchWrap {
+  position: relative;
+}
+
+.ta-searchWrap input {
+  height: 34px;
+  display: block;
+  width: 100%;
+  padding: 2px 10px;
+  padding-right: 32px;
+  box-sizing: border-box;
+  background: #FFF;
+  border: #D3D3D3 solid 1px;
+  color: #222;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+.ta-searchWrap input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #222;
+}
+
+.ta-searchWrap input::-moz-placeholder { /* Firefox 19+ */
+  color: #222;
+}
+
+.ta-searchWrap input:-ms-input-placeholder { /* IE 10+ */
+  color: #222;
+}
+
+.ta-searchWrap input:-moz-placeholder { /* Firefox 18- */
+  color: #222;
+}
+
+.ta-searchWrap button {
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  z-index: 10;
+  cursor: pointer;
+  background: #2f89fc;
+  border: none;
+  padding: 1px 6px;
+  width: 32px;
+  height: 32px;
+  border-radius: 0 4px 4px 0;
+}
+
+.ta-searchWrap button img {
+  width: 14px;
+  position: relative;
+  top:-1px;
+}
+
+/* tabs */
+.ta-tabs {
+  position: relative;
+}
+
+.ta-tabs ul.ta-tab-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ta-tabs ul.ta-tab-nav:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.region-content ul.ta-colors {
+  margin: 0;
+  padding: 0;
+}
+
+ul.ta-tab-nav li {
+  float: left;
+  width: 50%;
+}
+
+ul.ta-tab-nav li a {
+  display: block;
+  height: 34px;
+  margin-bottom: -1px;
+  position: relative;
+  opacity: 0.7;
+}
+
+ul.ta-tab-nav li a.active {
+  background-color: #FFF;
+  border-radius: 4px 4px 0 0;
+  border: 1px solid #737c70;
+  border-bottom: none;
+  opacity: 1;
+}
+
+ul.ta-tab-nav li a.ta-summery {
+  background-image: url("../images/clipboard-list-solid.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 18px;
+}
+
+ul.ta-tab-nav li a.ta-detail {
+  background-image: url("../images/open-book-icon.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+ul.ta-colors {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul.ta-colors li {
+  margin-bottom: 10px;
+}
+
+ul.ta-colors li:last-child {
+  margin-bottom: 0;
+}
+
+ul.ta-colors li {
+  color: #222;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+ul.ta-colors li:before {
+  content: "";
+  display: inline-block;
+}
+
+/*ul.ta-colors li:before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 17px;
+  vertical-align: middle;
+  margin-right: 15px;
+}
+ul.ta-colors li.anger-wrap:before {
+  background-color: #FF0000;
+}
+ul.ta-colors li.fear-wrap:before {
+  background-color: #997951;
+}
+ul.ta-colors li.joy-wrap:before {
+  background-color: #f7c800;
+}
+ul.ta-colors li.sadness-wrap:before {
+  background-color: #999da0;
+}
+ul.ta-colors li.analytical-wrap:before {
+  background-color: rgb(56, 226, 248);
+}
+ul.ta-colors li.confident-wrap:before {
+  background-color: #39ff14;
+}
+ul.ta-colors li.tentative-wrap:before {
+  background-color: #fc5419;
+}
+*/
+ul.ta-colors li .tone_count {
+  display: inline-block;
+  margin-right: 6px;
+  min-width: 14px;
+}
+
+#tabs-2 {
+  display: none;
+}
+
+.ta-tab-blocks {
+  padding: 10px;
+  background-color: #FFF;
+  border-radius: 0 0px 4px 4px;
+  border: #D3D3D3 solid 1px;
+  max-height: 70vh;
+  overflow-y: auto;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+div[class^="emoti-wrapper"] label {
+  color: #222;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin: 10px 0 5px;
+  font-weight: bold;
+  display: block;
+}
+
+div[class^="emoti-wrapper"] label:before {
+  content: "";
+}
+
+.icon-emoti, ul.ta-colors li:before,
+div[class^="emoti-wrapper"] label:before {
+  display: inline-block;
+  vertical-align: middle;
+  width: 25px;
+  height: 25px;
+  margin: 0 5px 5px 0;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: 24px 175px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.icon-emoti:hover {
+  text-decoration: underline;
+}
+
+ul.ta-colors li:before, div[class^="emoti-wrapper"] label:before {
+  background-image: url("../images/emoji_sprite.png");
+  text-indent: -9999px;
+}
+
+ul.ta-colors li:before {
+  margin-right: 10px;
+}
+
+.emoti-anger, ul.ta-colors li.anger-wrap:before,
+.emoti-wrapper-anger label:before {
+  background-position: 0 0;
+}
+
+.emoti-fear, ul.ta-colors li.fear-wrap:before,
+.emoti-wrapper-fear label:before {
+  background-position: 0 -25px;
+}
+
+.emoti-sadness, ul.ta-colors li.sadness-wrap:before,
+.emoti-wrapper-sadness label:before {
+  background-position: 0 -75px;
+}
+
+.emoti-joy, ul.ta-colors li.joy-wrap:before,
+.emoti-wrapper-joy label:before {
+  background-position: 0 -50px;
+}
+
+.emoti-confident, ul.ta-colors li.confident-wrap:before,
+.emoti-wrapper-confident label:before {
+  background-position: 0 -125px;
+}
+
+.emoti-analytical, ul.ta-colors li.analytical-wrap:before,
+.emoti-wrapper-analytical label:before {
+  background-position: 0 -100px;
+}
+
+.emoti-tentative, ul.ta-colors li.tentative-wrap:before,
+.emoti-wrapper-tentative label:before {
+  background-position: 0 -150px;
+}
+
+.mob-tab-toggle {
+  display: none;
+}
+
+/* Responsive css */
+@media (max-width: 979px) {
+  .ta-sideBar {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+  }
+
+  .page-get-tone #main iframe {
+    height: calc(100vh - 76px);
+    width: 100%;
+  }
+
+  .mob-tab-toggle {
+    display: inline-block;
+    padding: 0 10px;
+    height: 35px;
+    margin: 0;
+  }
+
+  .to-resp {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    align-items: center;
+    -webkit-align-items: center;
+  }
+
+  .hold-search {
+    flex: 1;
+    margin: 0 0 0 15px;
+  }
+
+  .hold-tones {
+    margin-top: 20px;
+  }
+}
+
+#se-pre-con {
+  position: fixed;
+
+}

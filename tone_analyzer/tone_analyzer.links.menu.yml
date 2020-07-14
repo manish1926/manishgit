@@ -1,0 +1,6 @@
+tone_analyzer.tone_analyzer_config_form:
+  title: 'Tone Analyzer Config Form'
+  route_name: tone_analyzer.tone_analyzer_config_form
+  description: 'A description for the menu entry'
+  parent: system.admin_config_system
+  weight: 99
